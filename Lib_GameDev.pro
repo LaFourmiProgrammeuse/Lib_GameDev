@@ -47,23 +47,18 @@ unix {
     INSTALLS += target
 }
 
-win32: LIBS += -L$$PWD/../../Librairie/Sfml/Compiler/ -lsfml-main
+INCLUDEPATH += $$PWD/SFML-2.5.1/include
+DEPENDPATH += $$PWD/SFML-2.5.1/include
 
-INCLUDEPATH += $$PWD/../../Librairie/Sfml/Compiler/include
-DEPENDPATH += $$PWD/../../Librairie/Sfml/Compiler/include
+#unix:!macx: LIBS += -L$$PWD/../JeuDeLaVie/SFML-2.5.1/linux/lib -lsfml-window
+#unix:!macx: LIBS += -L$$PWD/../JeuDeLaVie/SFML-2.5.1/linux/lib -lsfml-graphics
+#unix:!macx: LIBS += -L$$PWD/../JeuDeLaVie/SFML-2.5.1/linux/lib -lsfml-network
+#unix:!macx: LIBS += -L$$PWD/../JeuDeLaVie/SFML-2.5.1/linux/lib -lsfml-system
+#unix:!macx: LIBS += -L$$PWD/../JeuDeLaVie/SFML-2.5.1/linux/lib -lsfml-audio
 
-win32: LIBS += -L$$PWD/../../Librairie/Sfml/Compiler/ -lsfml-window
-
-INCLUDEPATH += $$PWD/../../Librairie/Sfml/Compiler/include
-DEPENDPATH += $$PWD/../../Librairie/Sfml/Compiler/include
-
-win32: LIBS += -L$$PWD/../../Librairie/Sfml/Compiler/ -lsfml-graphics
-
-INCLUDEPATH += $$PWD/../../Librairie/Sfml/Compiler/include
-DEPENDPATH += $$PWD/../../Librairie/Sfml/Compiler/include
-
-win32: LIBS += -L$$PWD/../../Librairie/Sfml/Compiler/ -lsfml-system
-
-INCLUDEPATH += $$PWD/../../Librairie/Sfml/Compiler/include
-DEPENDPATH += $$PWD/../../Librairie/Sfml/Compiler/include
+win32: LIBS += -L$$PWD/SFML-2.5.1/window/lib -lsfml-window
+win32: LIBS += -L$$PWD/SFML-2.5.1/window/lib -lsfml-graphics
+win32: LIBS += -L$$PWD/SFML-2.5.1/window/lib -lsfml-network
+win32: LIBS += -L$$PWD/SFML-2.5.1/window/lib -lsfml-system
+win32: LIBS += -L$$PWD/SFML-2.5.1/window/lib -lsfml-audio
 
