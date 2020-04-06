@@ -47,18 +47,21 @@ unix {
     INSTALLS += target
 }
 
+#LIB SFML
 INCLUDEPATH += $$PWD/SFML-2.5.1/include
 DEPENDPATH += $$PWD/SFML-2.5.1/include
 
-#unix:!macx: LIBS += -L$$PWD/../JeuDeLaVie/SFML-2.5.1/linux/lib -lsfml-window
-#unix:!macx: LIBS += -L$$PWD/../JeuDeLaVie/SFML-2.5.1/linux/lib -lsfml-graphics
-#unix:!macx: LIBS += -L$$PWD/../JeuDeLaVie/SFML-2.5.1/linux/lib -lsfml-network
-#unix:!macx: LIBS += -L$$PWD/../JeuDeLaVie/SFML-2.5.1/linux/lib -lsfml-system
-#unix:!macx: LIBS += -L$$PWD/../JeuDeLaVie/SFML-2.5.1/linux/lib -lsfml-audio
+unix: LIBS += -L$$PWD/SFML-2.5.1/linux/lib -lsfml-window
+else:win32: LIBS += -L$$PWD/SFML-2.5.1/window/lib -lsfml-window
 
-win32: LIBS += -L$$PWD/SFML-2.5.1/window/lib -lsfml-window
-win32: LIBS += -L$$PWD/SFML-2.5.1/window/lib -lsfml-graphics
-win32: LIBS += -L$$PWD/SFML-2.5.1/window/lib -lsfml-network
-win32: LIBS += -L$$PWD/SFML-2.5.1/window/lib -lsfml-system
-win32: LIBS += -L$$PWD/SFML-2.5.1/window/lib -lsfml-audio
+unix: LIBS += -L$$PWD/SFML-2.5.1/linux/lib -lsfml-graphics
+else:win32: LIBS += -L$$PWD/SFML-2.5.1/window/lib -lsfml-graphics
 
+unix: LIBS += -L$$PWD/SFML-2.5.1/linux/lib -lsfml-network
+else:win32: LIBS += -L$$PWD/SFML-2.5.1/window/lib -lsfml-network
+
+unix: LIBS += -L$$PWD/SFML-2.5.1/linux/lib -lsfml-system
+else:win32: LIBS += -L$$PWD/SFML-2.5.1/window/lib -lsfml-system
+
+unix: LIBS += -L$$PWD/SFML-2.5.1/linux/lib -lsfml-audio
+else:win32: LIBS += -L$$PWD/SFML-2.5.1/window/lib -lsfml-audio
