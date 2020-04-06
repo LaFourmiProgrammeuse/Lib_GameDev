@@ -12,7 +12,7 @@ Button_Widget::Button_Widget()
     font_default = new sf::Font;
 
     if(font_default->loadFromFile("Bebas.otf")){
-        qDebug() << "Font par defaut pour les boutons chargée avec succès !";
+        //qDebug() << "Font par defaut pour les boutons chargée avec succès !";
         text.setFont(*font_default);
     }
     else{
